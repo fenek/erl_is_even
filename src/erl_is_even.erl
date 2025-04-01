@@ -5,6 +5,10 @@
 
 -export([is_even/1]).
 
+-type input() :: integer() | binary() | nonempty_list().
+-export_type([input/0]).
+
+-spec is_even(input()) -> boolean().
 is_even(Integer) when is_integer(Integer) ->
     Integer rem 2 == 0;
 is_even(MaybeBinInteger) when is_binary(MaybeBinInteger) ->
